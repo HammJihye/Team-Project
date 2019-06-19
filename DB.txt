@@ -1,0 +1,107 @@
+create table product(
+    pid VARCHAR(10),
+    price INT,
+    pcount INT,
+    pmonth INT,
+    pdate DATE,
+    pname VARCHAR(20),
+    PRIMARY KEY(pid)
+    );
+
+create table member(
+    id VARCHAR(10),
+    passwd VARCHAR(10),
+    name VARCHAR(10),
+    phone VARCHAR(20),
+    mail VARCHAR(20),
+    PRIMARY KEY(id,phone)
+    );
+create table orders(
+    oid INT auto_increment,
+    id VARCHAR(10),
+    pid VARCHAR(10),
+    ocount INT,
+    odate DATE,
+    total INT,
+    payment VARCHAR(15),
+    state VARCHAR(10),
+    PRIMARY KEY(oid),
+    FOREIGN KEY(id) REFERENCES member(id),
+    FOREIGN KEY(pid) REFERENCES product(pid)
+    );
+
+create table basket(
+bid INT auto_increment,
+id VARCHAR(10),
+pid VARCHAR(10),
+pname VARCHAR(20),
+ocount INT,
+total INT,
+PRIMARY KEY(bid)
+);
+
+insert into member values('aa','1234','aa','010','aa');
+
+
+create table board(
+boid INT auto_increment,
+ id VARCHAR(10),
+content VARCHAR(2000),
+title VARCHAR(50),
+PRIMARY KEY(boid)
+ );
+
+
+
+insert into product values('p013.1',180000,10,3,'20/03/05','korea');
+insert into product values('p013.2',180000,10,3,'20/03/10','korea');
+insert into product values('p013.3',180000,10,3,'20/03/15','korea');
+insert into product values('p013.4',180000,10,3,'20/03/20','korea');
+insert into product values('p014.1',180000,10,4,'20/04/01','korea');
+insert into product values('p014.2',180000,10,4,'20/04/08','korea');
+insert into product values('p014.3',180000,10,4,'20/04/15','korea');
+insert into product values('p014.4',180000,10,4,'20/04/21','korea');
+insert into product values('p015.1',180000,10,5,'20/05/03','korea');
+insert into product values('p015.2',180000,10,5,'20/05/11','korea');
+insert into product values('p015.3',180000,10,5,'20/05/17','korea');
+insert into product values('p015.4',180000,10,5,'20/05/22','korea');
+
+
+insert into product values('p026.1',310000,12,6,'19/06/20','italy');
+insert into product values('p026.2',310000,12,6,'19/06/22','italy');
+insert into product values('p026.3',310000,12,6,'19/06/25','italy');
+insert into product values('p026.4',310000,12,6,'19/06/27','italy');
+insert into product values('p027.1',310000,12,7,'19/07/02','italy');
+insert into product values('p027.2',310000,12,7,'19/07/08','italy');
+insert into product values('p027.3',310000,12,7,'19/07/13','italy');
+insert into product values('p027.4',310000,12,7,'19/07/19','italy');
+insert into product values('p028.1',310000,12,8,'19/08/08','italy');
+insert into product values('p028.2',310000,12,8,'19/08/14','italy');
+insert into product values('p028.3',310000,12,8,'19/08/19','italy');
+insert into product values('p028.4',310000,12,8,'19/08/22','italy');
+
+insert into product values('p039.1',280000,15,9,'19/09/4','canada');
+insert into product values('p039.2',280000,15,9,'19/09/9','canada');
+insert into product values('p039.3',280000,15,9,'19/09/14','canada');
+insert into product values('p039.4',280000,15,9,'19/09/19','canada');
+insert into product values('p0310.1',280000,15,10,'19/10/6','canada');
+insert into product values('p0310.2',280000,15,10,'19/10/12','canada');
+insert into product values('p0310.3',280000,15,10,'19/10/17','canada');
+insert into product values('p0310.4',280000,15,10,'19/10/23','canada');
+insert into product values('p0311.1',280000,15,11,'19/11/5','canada');
+insert into product values('p0311.2',280000,15,11,'19/11/12','canada');
+insert into product values('p0311.3',280000,15,11,'19/11/18','canada');
+insert into product values('p0311.4',280000,15,11,'19/11/24','canada');
+
+insert into product values('p0412.1',360000,18,12,'19/12/2','belgium');
+insert into product values('p0412.2',360000,18,12,'19/12/8','belgium');
+insert into product values('p0412.3',360000,18,12,'19/12/11','belgium');
+insert into product values('p0412.4',360000,18,12,'19/12/15','belgium');
+insert into product values('p041.1',360000,18,1,'20/1/6','belgium');
+insert into product values('p041.2',360000,18,1,'20/1/12','belgium');
+insert into product values('p041.3',360000,18,1,'20/1/16','belgium');
+insert into product values('p041.4',360000,18,1,'20/1/22','belgium');
+insert into product values('p042.1',360000,18,2,'20/2/4','belgium');
+insert into product values('p042.2',360000,18,2,'20/2/11','belgium');
+insert into product values('p042.3',360000,18,2,'20/2/13','belgium');
+insert into product values('p042.4',360000,18,2,'20/2/21','belgium');
